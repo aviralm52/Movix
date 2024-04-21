@@ -159,12 +159,12 @@ const Explore = () => {
                             </span>
                         )}
                         <div
-                            className="temp bg-blue-950 text-white text-3xl w-8 h-8 fixed bottom-4 right-12 hover:cursor-pointer scroll-smooth"
+                            className="temp moveToTop fixed hover:cursor-pointer scroll-smooth"
                             onClick={() =>
                                 window.scroll({ top: 0, behavior: "smooth" })
                             }
                         >
-                            <GoMoveToTop />
+                            <GoMoveToTop className="arrow" />
                         </div>
                     </>
                 </ContentWrapper>

@@ -80,3 +80,22 @@
         }
     }
 }
+
+
+.moveToTop{
+    position: absolute;
+    background-color: rgb(2, 2, 26);
+    box-shadow: burlywood;
+    bottom: 16px;
+    right: 48px;
+    border: 1px solid white;
+    @include xxs{
+        position: absolute;
+        bottom: 10px;
+        right: 5px;
+    }
+    .arrow{
+        font-size: 20px;
+        color: white;
+    }
+}
