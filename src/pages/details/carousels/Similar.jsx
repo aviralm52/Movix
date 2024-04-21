@@ -3,10 +3,10 @@ import React from "react";
 import Carousel from "../../../components/carousel/Carousel";
 import useFetch from "../../../hooks/useFetch";
 
-const Similar = ({ media_type, id }) => {
-    const { data, loading, error } = useFetch(`/${media_type}/${id}/similar`);
+const Similar = ({ mediaType, id }) => {
+    const { data, loading, error } = useFetch(`/${mediaType}/${id}/similar`);
 
-    const title = media_type === "tv" ? "Similar TV Shows" : "Similar Movies";
+    const title = mediaType === "tv" ? "Similar TV Shows" : "Similar Movies";
 
     return (
         <div>
@@ -15,7 +15,7 @@ const Similar = ({ media_type, id }) => {
                     title={title}
                     data={data?.results}
                     loading={loading}
-                    endPoint={media_type}
+                    endPoint={mediaType}
                 />
             }
         </div>

@@ -1,0 +1,82 @@
+@import "../../mixins.scss";
+.explorePage{
+    width: 100vw;
+    margin-top: 100px;
+}
+.content{
+    display: flex;
+    flex-flow: wrap;
+    gap: 20px;
+    margin-bottom: 50px;
+    // justify-content: center;
+}
+.movieCard {
+    .posterBlock {
+        margin-bottom: 20px;
+    }
+}
+.pageTitle{
+    text-align: left;
+    font-size: 32px;
+    line-height: 34px;
+    margin-bottom: 20px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.selectDiv{
+    width: calc(60%);
+}
+
+.react-select-container{
+    width: calc(100%);
+    .react-select__control{
+        background-color: var(--black-1);
+        border-radius: 20px;
+        width: calc(100%);
+        border: none;
+        outline: none;
+        text-decoration: none;
+        border: 1px solid white;
+        color: white;
+        &:hover{
+            cursor: pointer;
+        }
+        .react-select__multi-value {
+            background-color: var(--black3);
+            border-radius: 20px;
+            .react-select__multi-value__label {
+                color: white;
+            }
+        }  
+    }
+    .react-select__menu{
+        color:rgb(7, 7, 97);
+        font-weight: 500;
+        .react-select__menu-list{
+            .react-select__option{
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+
+
+.exploreHeader{
+    @include xxs{
+        display: flex;
+        flex-direction: column;
+    }
+    .selectDiv{
+        @include xxs{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+}

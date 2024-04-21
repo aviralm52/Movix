@@ -245,3 +245,9 @@
 .genreDetails{
     border: 1px solid white;
 }
+
+@media screen and (max-width: 1860px) {
+    .reviewsSideBar{
+        display: none;
+    }
+}

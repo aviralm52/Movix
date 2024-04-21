@@ -3,13 +3,12 @@ import React from "react";
 import Carousel from "../../../components/carousel/Carousel";
 import useFetch from "../../../hooks/useFetch";
 
-const Recommendation = ({ media_type, id }) => {
+const Recommendation = ({ mediaType, id }) => {
     const { data, loading, error } = useFetch(
-        `/${media_type}/${id}/recommendations`
+        `/${mediaType}/${id}/recommendations`
     );
     const title =
-        media_type === "tv" ? "Recommended TV Shows" : "Recommended Movies";
-    console.log("data: ", data);
+        mediaType === "tv" ? "Recommended TV Shows" : "Recommended Movies";
     return (
         <div>
             {   data?.results?.length > 0 &&
@@ -17,7 +16,7 @@ const Recommendation = ({ media_type, id }) => {
                     title="Recommendations"
                     data={data?.results}
                     loading={loading}
-                    endpoint={media_type}
+                    endpoint={mediaType}
                 />
             }
         </div>

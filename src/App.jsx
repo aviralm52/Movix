@@ -24,6 +24,7 @@ function App() {
                 backdrop: res.images?.secure_base_url + "original",
                 poster: res.images?.secure_base_url + "original",
                 profile: res.images?.secure_base_url + "original",
+                avatar: 'https://image.tmdb.org/t/p/w185/'
             }
             dispatch(homeActions.getApiConfiguration(url));
         });
@@ -59,7 +60,7 @@ function App() {
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/:media_type/:id" element={<Details />} />
+                <Route path="/:mediaType/:id" element={<Details />} />
                 <Route path="/search/:query" element={<SearchResult />} />
                 <Route path="/explore/:mediaType" element={<Explore />} />
                 <Route path="/*" element={<PageNotFound />} />
