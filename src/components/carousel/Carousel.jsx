@@ -86,7 +86,7 @@ const Carousel = ({ title, data, loading, endPoint }) => {
                                             }
                                         >
                                             <Img src={posterUrl} />
-                                        </abbr> //! This tag is added to show the title of the poster on hovering
+                                        </abbr> 
                                         <CircleRating
                                             rating={item.vote_average.toFixed(
                                                 1
@@ -128,3 +128,7 @@ const Carousel = ({ title, data, loading, endPoint }) => {
 };
 
 export default Carousel;
+
+
+
+//! <abbr> tag is added to show the title of the poster on hovering
