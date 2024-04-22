@@ -17,6 +17,7 @@ const Header = () => {
     const [showSearch, setShowSearch] = useState(false);
     const navigate = useNavigate();
     const location = useLocation(); //! when we change the page it tells the loaction or route of the page
+    console.log(location, location.pathname);
 
     //! when we change the page after scrolling down then the scroll will be passed to that page, so to set that scroll to 0 this useEffect will run when the locaton is changed
     useEffect(() => {
@@ -70,12 +71,15 @@ const Header = () => {
         setMobileMenu(false);
     };
 
-
     return (
         <header className={`header ${mobileMenu ? "mobileView" : ""} ${show} `}>
             <ContentWrapper>
-                <div className="logo" onClick={() => navigate('/')}>
-                    <img src={logo} alt="logo" />
+                <div className="logo" onClick={() => navigate("/")}>
+                    <img
+                        src={logo}
+                        alt="logo"
+                        onClick={() => setShowSearch(false)}
+                    />
                 </div>
                 <ul className="menuItems">
                     <li
@@ -91,14 +95,16 @@ const Header = () => {
                         TV Shows
                     </li>
                     <li className="menuItem">
-                        <HiOutlineSearch onClick={openSearch} />
+                        {location.pathname !== "/" && (
+                            <HiOutlineSearch onClick={openSearch} />
+                        )}
                     </li>
                 </ul>
                 <div className="mobileMenuItems">
-                    <HiOutlineSearch
+                    {location.pathname !== '/' && <HiOutlineSearch
                         className="cursor-pointer"
                         onClick={openSearch}
-                    />
+                    />}
                     {mobileMenu ? (
                         <VscChromeClose
                             className=" cursor-pointer"
@@ -140,3 +146,5 @@ const Header = () => {
 };
 
 export default Header;
+
+// ! I don't want to show search icon when we are on home page so I had used location to find the route of the path we are on
