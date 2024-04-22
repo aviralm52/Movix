@@ -17,7 +17,6 @@ const Header = () => {
     const [showSearch, setShowSearch] = useState(false);
     const navigate = useNavigate();
     const location = useLocation(); //! when we change the page it tells the loaction or route of the page
-    console.log(location, location.pathname);
 
     //! when we change the page after scrolling down then the scroll will be passed to that page, so to set that scroll to 0 this useEffect will run when the locaton is changed
     useEffect(() => {
@@ -54,11 +53,12 @@ const Header = () => {
     };
 
     const searchQueryHandler = (event) => {
+        event.preventDefault();
         if (event.key === "Enter" && query.length > 0) {
             navigate(`search/${query}`);
             setTimeout(() => {
                 setShowSearch(false); //! this will close the search bar automatically after 1 second when we moved to the searched movie page
-            }, 1000);
+            }, 200);
         }
     };
 

@@ -24,14 +24,16 @@ const HeroBanner = () => {
         setBackground(randomBg);
 
         // ! This part will log the title of the poster in console, it has no effect on the app
-        if (data?.results?.[randomNum].title !== undefined)
-            console.log("Post Title: ", data?.results?.[randomNum].title);
-        else if (data?.results?.[randomNum].name !== undefined)
-            console.log("Post Name: ", data?.results?.[randomNum].name);
+        // if (data?.results?.[randomNum].title !== undefined)
+        //     console.log("Post Title: ", data?.results?.[randomNum].title);
+        // else if (data?.results?.[randomNum].name !== undefined)
+        //     console.log("Post Name: ", data?.results?.[randomNum].name);
     }, [data]);
 
     const searchQueryHandler = (event) => {
         if (event.key === "Enter" && query.length > 0) {
+            navigate(`search/${query}`);
+        }else if(event.type === 'click'){
             navigate(`search/${query}`);
         }
     };
@@ -61,7 +63,7 @@ const HeroBanner = () => {
                                 }
                                 onKeyUp={searchQueryHandler}
                             />
-                            <button>Search</button>
+                            <button onClick={searchQueryHandler}>Search</button>
                         </div>
                     </div>
                 </div>
